@@ -1,24 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ax3-iU-nW7">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Drink View Controller-->
+        <scene sceneID="STu-EI-VqW">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="ax3-iU-nW7" customClass="DrinkViewController" customModule="Cocktails" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G82-VM-ALM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="LC3-TN-6kZ">
+                                <rect key="frame" x="0.0" y="56" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(drink)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19T-Yg-4UG">
+                                <rect key="frame" x="181.5" y="462" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(instructions)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3v-IQ-kdf">
+                                <rect key="frame" x="20" y="503" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pj1-mb-q8J">
+                                <rect key="frame" x="78.5" y="122" width="257" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="1O0-AC-a77"/>
+                                    <constraint firstAttribute="width" constant="257" id="eJ7-JT-Daf"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rh-Kj-Hh6">
+                                <rect key="frame" x="172.5" y="623.5" width="69" height="41"/>
+                                <color key="backgroundColor" red="0.0" green="0.26527877090000002" blue="0.64383724620000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="supriseMeButtonTapped:" destination="ax3-iU-nW7" eventType="touchUpInside" id="s5W-YN-Sdg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qa4-v0-0ZY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m3v-IQ-kdf" firstAttribute="top" secondItem="19T-Yg-4UG" secondAttribute="bottom" constant="20" id="0Ih-LH-viL"/>
+                            <constraint firstItem="LC3-TN-6kZ" firstAttribute="trailing" secondItem="qa4-v0-0ZY" secondAttribute="trailing" id="5fj-Eu-og8"/>
+                            <constraint firstItem="m3v-IQ-kdf" firstAttribute="leading" secondItem="qa4-v0-0ZY" secondAttribute="leading" constant="20" id="776-9e-6s1"/>
+                            <constraint firstItem="LC3-TN-6kZ" firstAttribute="leading" secondItem="qa4-v0-0ZY" secondAttribute="leading" id="CPJ-Bn-eso"/>
+                            <constraint firstItem="m3v-IQ-kdf" firstAttribute="centerX" secondItem="qa4-v0-0ZY" secondAttribute="centerX" id="DF5-UK-Mry"/>
+                            <constraint firstItem="pj1-mb-q8J" firstAttribute="top" secondItem="LC3-TN-6kZ" secondAttribute="bottom" constant="10" id="VGJ-N9-ll3"/>
+                            <constraint firstItem="19T-Yg-4UG" firstAttribute="top" secondItem="pj1-mb-q8J" secondAttribute="bottom" constant="60" id="XJv-G8-0Je"/>
+                            <constraint firstItem="pj1-mb-q8J" firstAttribute="centerX" secondItem="qa4-v0-0ZY" secondAttribute="centerX" id="Xm5-kx-E70"/>
+                            <constraint firstItem="LC3-TN-6kZ" firstAttribute="top" secondItem="qa4-v0-0ZY" secondAttribute="top" constant="12" id="bTk-2Y-Aaj"/>
+                            <constraint firstItem="19T-Yg-4UG" firstAttribute="centerX" secondItem="qa4-v0-0ZY" secondAttribute="centerX" id="dkf-aJ-Ywu"/>
+                            <constraint firstItem="qa4-v0-0ZY" firstAttribute="trailing" secondItem="m3v-IQ-kdf" secondAttribute="trailing" constant="20" id="fIe-UF-3Ff"/>
+                            <constraint firstItem="8rh-Kj-Hh6" firstAttribute="top" secondItem="m3v-IQ-kdf" secondAttribute="bottom" constant="100" id="pE1-g1-SrR"/>
+                            <constraint firstItem="8rh-Kj-Hh6" firstAttribute="centerX" secondItem="qa4-v0-0ZY" secondAttribute="centerX" id="uYv-Rs-nh2"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="drinkImageView" destination="pj1-mb-q8J" id="njO-2o-n2D"/>
+                        <outlet property="drinkInstructionsLabel" destination="m3v-IQ-kdf" id="gF1-TI-OIW"/>
+                        <outlet property="drinkNameLabel" destination="19T-Yg-4UG" id="yl5-dx-fY1"/>
+                        <outlet property="searchBar" destination="LC3-TN-6kZ" id="ApO-fx-v1A"/>
+                        <outlet property="supriseMeButton" destination="8rh-Kj-Hh6" id="Cqc-3Q-8mL"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7rr-1j-zGm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-97.101449275362327" y="48.883928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

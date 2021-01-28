@@ -14,7 +14,7 @@ class DrinkController {
     static let baseURL = URL(string: "https://www.thecocktaildb.com/api/json/v1/1")
     static let searchEndPoint = "search"
     static let phpExtension = "php"
-    
+    static let randomEndPoint = "random"
     static func fetchDrinks(searchTerm: String, completion: @escaping (Result<Drink,DrinkError>) -> Void) {
         
         guard let baseURL = baseURL else { return completion(.failure(.invalidURL)) }
@@ -72,4 +72,37 @@ class DrinkController {
             completion(.success(thumbnail))
         }.resume()
     }
+        static func fetchRandomDrink(completion: @escaping (Result<Drink,DrinkError>) -> Void) {
+            
+            guard let baseURL = baseURL else { return completion(.failure(.invalidURL))}
+            let randomURL = baseURL.appendingPathComponent(randomEndPoint)
+            let finalURL = randomURL.appendingPathExtension(phpExtension)
+            print(finalURL)
+            
+            URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
+                if let error = error {
+                    print("======== ERROR ========")
+                    print("Function: \(#function)")
+                    print("Error: \(error)")
+                    print("Description: \(error.localizedDescription)")
+                    print("======== ERROR ========")
+                    return completion(.failure(.thrownError(error)))
+                }
+                guard let data = data else { return completion(.failure(.noData))}
+                
+                do {
+                    let topLevelObject = try JSONDecoder().decode(TopLevelObject.self, from: data)
+                    let randomDrink = topLevelObject.drinks[0]
+                    completion(.success(randomDrink))
+                } catch {
+                    print("======== ERROR ========")
+                    print("Function: \(#function)")
+                    print("Error: \(error)")
+                    print("Description: \(error.localizedDescription)")
+                    print("======== ERROR ========")
+                    return completion(.failure(.thrownError(error)))
+                    
+                }
+            }.resume()
+        }
 }// End of class

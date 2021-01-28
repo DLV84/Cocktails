@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="LC3-TN-6kZ">
+                            <searchBar contentMode="redraw" placeholder="Find your drink..." translatesAutoresizingMaskIntoConstraints="NO" id="LC3-TN-6kZ">
                                 <rect key="frame" x="0.0" y="56" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -26,7 +26,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(instructions)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3v-IQ-kdf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(instructions)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3v-IQ-kdf">
                                 <rect key="frame" x="20" y="503" width="374" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -40,10 +40,10 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rh-Kj-Hh6">
-                                <rect key="frame" x="172.5" y="623.5" width="69" height="41"/>
+                                <rect key="frame" x="20" y="805" width="374" height="41"/>
                                 <color key="backgroundColor" red="0.0" green="0.26527877090000002" blue="0.64383724620000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="  Suprise Me With A Drink  ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -57,15 +57,17 @@
                             <constraint firstItem="m3v-IQ-kdf" firstAttribute="top" secondItem="19T-Yg-4UG" secondAttribute="bottom" constant="20" id="0Ih-LH-viL"/>
                             <constraint firstItem="LC3-TN-6kZ" firstAttribute="trailing" secondItem="qa4-v0-0ZY" secondAttribute="trailing" id="5fj-Eu-og8"/>
                             <constraint firstItem="m3v-IQ-kdf" firstAttribute="leading" secondItem="qa4-v0-0ZY" secondAttribute="leading" constant="20" id="776-9e-6s1"/>
+                            <constraint firstItem="qa4-v0-0ZY" firstAttribute="trailing" secondItem="8rh-Kj-Hh6" secondAttribute="trailing" constant="20" id="7fi-gG-H4o"/>
                             <constraint firstItem="LC3-TN-6kZ" firstAttribute="leading" secondItem="qa4-v0-0ZY" secondAttribute="leading" id="CPJ-Bn-eso"/>
                             <constraint firstItem="m3v-IQ-kdf" firstAttribute="centerX" secondItem="qa4-v0-0ZY" secondAttribute="centerX" id="DF5-UK-Mry"/>
+                            <constraint firstItem="qa4-v0-0ZY" firstAttribute="bottom" secondItem="8rh-Kj-Hh6" secondAttribute="bottom" constant="16" id="Ldf-I5-abb"/>
                             <constraint firstItem="pj1-mb-q8J" firstAttribute="top" secondItem="LC3-TN-6kZ" secondAttribute="bottom" constant="10" id="VGJ-N9-ll3"/>
                             <constraint firstItem="19T-Yg-4UG" firstAttribute="top" secondItem="pj1-mb-q8J" secondAttribute="bottom" constant="60" id="XJv-G8-0Je"/>
                             <constraint firstItem="pj1-mb-q8J" firstAttribute="centerX" secondItem="qa4-v0-0ZY" secondAttribute="centerX" id="Xm5-kx-E70"/>
+                            <constraint firstItem="8rh-Kj-Hh6" firstAttribute="leading" secondItem="qa4-v0-0ZY" secondAttribute="leading" constant="20" id="aEl-63-fmg"/>
                             <constraint firstItem="LC3-TN-6kZ" firstAttribute="top" secondItem="qa4-v0-0ZY" secondAttribute="top" constant="12" id="bTk-2Y-Aaj"/>
                             <constraint firstItem="19T-Yg-4UG" firstAttribute="centerX" secondItem="qa4-v0-0ZY" secondAttribute="centerX" id="dkf-aJ-Ywu"/>
                             <constraint firstItem="qa4-v0-0ZY" firstAttribute="trailing" secondItem="m3v-IQ-kdf" secondAttribute="trailing" constant="20" id="fIe-UF-3Ff"/>
-                            <constraint firstItem="8rh-Kj-Hh6" firstAttribute="top" secondItem="m3v-IQ-kdf" secondAttribute="bottom" constant="100" id="pE1-g1-SrR"/>
                             <constraint firstItem="8rh-Kj-Hh6" firstAttribute="centerX" secondItem="qa4-v0-0ZY" secondAttribute="centerX" id="uYv-Rs-nh2"/>
                         </constraints>
                     </view>

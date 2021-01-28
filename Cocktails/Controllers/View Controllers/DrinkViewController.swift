@@ -23,12 +23,24 @@ class DrinkViewController: UIViewController {
         super.viewDidLoad()
         searchBar.delegate = self
         searchBar.autocapitalizationType = .none
-        supriseMeButton.layer.cornerRadius = 6
+        supriseMeButton.layer.cornerRadius = 8
     }
     
     //MARK: - Actions
     @IBAction func supriseMeButtonTapped(_ sender: Any) {
         
+        
+        DrinkController.fetchRandomDrink { [weak self] (result) in
+            DispatchQueue.main.async {
+                switch result {
+                
+                case .success(let drink):
+                    self?.fetchDrinkAndUpdateViews(drink: drink)
+                case .failure(let error):
+                    self?.presentErrorToUser(localizedError: error)
+                }
+            }
+        }
     }
     
     
